@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheat MTA - Inicio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://i.imgur.com/RgXx50X.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #login {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    #login h2 { color: #00ffcc; }
+    input[type="password"] {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 220px;
+      text-align: center;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover { background: #00bba0; }
+    #contenido { display: none; width: 100%; position: relative; }
+    nav {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #fff; }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    h1 { color: #00ffcc; }
+  </style>
+</head>
+<body>
+  <!-- Pantalla de clave -->
+  <div id="login">
+    <h2>🔑 Acceso a Cheat MTA</h2>
+    <input type="password" id="clave" placeholder="Introduce la clave">
+    <br>
+    <button onclick="verificarClave()">Entrar</button>
+  </div>
+
+  <!-- Contenido -->
+  <div id="contenido">
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="reglas.html">Reglas</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <section>
+      <h1>Bienvenido a Cheat MTA</h1>
+      <p>Servidor único de MTA con diversión garantizada 🎉</p>
+    </section>
+  </div>
+
+  <script>
+    function verificarClave() {
+      let clave = document.getElementById("clave").value;
+      if (clave === "mta123") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
+        document.body.style.display = "block";
+      } else {
+        alert("❌ Clave incorrecta");
+      }
+    }
+  </script>
+</body>
+</html>
