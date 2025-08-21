@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheat MTA - Acceso</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://i.imgur.com/RgXx50X.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #login {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 220px;
+      text-align: center;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    #contenido { display: none; }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <h2>🔑 Acceso Cheat MTA</h2>
+    <input type="password" id="clave" placeholder="Introduce tu clave">
+    <br>
+    <button onclick="verificarClave()">Entrar</button>
+  </div>
+
+  <div id="contenido">
+    <h1>🎉 Bienvenido a Cheat MTA</h1>
+    <p>Has entrado correctamente.</p>
+  </div>
+
+  <script>
+    // Lista de 10 claves válidas
+    let claves = [
+      "CheatMTA1",
+      "cheatww",
+      "Cheat1203",
+      "cheat1924",
+      "Cheat483828",
+      "cheat473475",
+      "Cheat23843",
+      "cheat3gj49",
+      "Cheat29h5",
+      "cheat4214p"
+    ];
+
+    // 🔹 Si ya entró antes, mostrar directamente contenido
+    if (localStorage.getItem("accesoCheatMTA") === "true") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("contenido").style.display = "block";
+    }
+
+    function verificarClave() {
+      let clave = document.getElementById("clave").value.trim();
+      let index = claves.indexOf(clave);
+
+      if (index !== -1) {
+        alert("✅ Clave correcta, accediendo...");
+        // Guardar en navegador que ya pasó
+        localStorage.setItem("accesoCheatMTA", "true");
+        document.getElementById("login").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
+      } else {
+        alert("❌ Clave inválida o ya usada");
+      }
+    }
+  </script>
+</body>
+</html>
